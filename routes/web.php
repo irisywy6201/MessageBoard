@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+//留言板
+Route::get('/messages', 'MessageController@index');
+Route::get('/post', 'MessageController@create');
+Route::post('/messages', 'MessageController@store');
+Route::delete('/messages/{message}', 'MessageController@destroy');
+Route::get('/messages/{message}/edit', 'MessageController@edit');
+Route::get('/messages/{message}', 'MessageController@show');
+Route::patch('messages/{message}', 'MessageController@update');
